@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>TECH.C. 4th Floor Walk Through Guide with A-Frame</title>
+        <meta name="description" content="TECH.C.校舎のA-Frameを活用したウォークスルー　スタイル　フロアーガイド：4F">
+        <script src="./dist/app.min.js"></script>
+    </head>
+    <body>
+    <a-scene>
+        
+        <a-entity id="maze" position="-4 1 -10"><!--空間視線の初期位置-->
+            <!--id名は壁面の識別と配置の目的-->
+            <!-- 数値表記　1　＝　1ｍ -->
+
+            <!-- 
+            【値】
+            天井高さ　2.8
+            梁の高さ　0.5
+            床から腰掛まで　0.9 
+            ドア高： 2100mm = A-Frame上の大きさは 2.1
+            ドア幅： 900mm = A-Frame上の大きさは 0.9 = 1.0にする
+            廊下天井高： 2450mm = A-Frame上の大きさは 2.45
+            廊下ガラス上壁高： 2800-2450mm = 350mm A-Frame上の大きさは 0.35
+            -->
+
+
+            <!-- とりあえず箱(型)を作ってみる -->
+            <!-- 見た目基準点　EW1　width＝あつさ　height=高さ　depth=横幅　-->
+            <!-- 教室401 -->
+            <a-box ID="EW1" class="collidable" position="0 0 -13.95" width="0.1" height="2.8" depth="33" color="#fff"></a-box><!--奥壁-->
+            <a-box ID="SN1" class="collidable" position="4 0 2.5" width="7.9" height="2.8" depth="0.1" color="#fff"></a-box><!--左側のしろい壁-->
+            <a-box ID="SN2" class="collidable" position="3.25 0　-2.45" width="6.4" height="2.8" depth="0.1" color="#fff"></a-box><!--右側のしろい壁-->
+            <a-box ID="SN2_top" class="collidable" position="6.95 1.05　-2.45" width="1" height="0.7" depth="0.1" color="#fff"></a-box><!--401のドアの上-->
+            <a-box ID="Z3" class="collidable" position="7.65 0　-2.45" width="0.5" height="2.8" depth="0.1" color="#fff"></a-box><!--ドア部の余白-->
+            <a-box ID="EW6" class="collidable" position="7.9 0 -5.95" width="0.1" height="2.8" depth="17" color="#fff"></a-box><!--階段左側から401の奥の壁までの壁-->
+            
+            <!-- 教室402　-->
+            <!-- <a-box ID="EW2" class="collidable" position="10 10 -13.95" width="0.1" height="2.8" depth="0.5" color="#fff"></a-box>奥壁             -->
+            <a-box ID="SN4" class="collidable" position="3 0　-12.45" width="5.9" height="2.8" depth="0.1" color="#fff"></a-box><!--右側のしろい壁-->
+            
+            <!-- 教室403　-->
+            <a-box ID="SN8" class="collidable" position="3.25 0　-22.45" width="6.4" height="2.8" depth="0.1" color="#fff"></a-box><!--右側のしろい壁-->
+            <a-box ID="SN8_top" class="collidable" position="6.95 1.05　-22.45" width="1" height="0.7" depth="0.1" color="#fff"></a-box><!--404ドアの上-->
+            
+            <!-- 教室404　-->
+            <a-box ID="SN13" class="collidable" position="4 0 -30.5" width="7.9" height="2.8" depth="0.1" color="#fff"></a-box><!--左側のしろい壁-->
+            <a-box ID="EW8" class="collidable" position="7.9 0　-24.45" width="0.1" height="2.8" depth="12" color="#fff"></a-box><!--階段右側から404の奥の壁までの壁-->
+            <a-box ID="Z4" class="collidable" position="7.65 0　-22.45" width="0.5" height="2.8" depth="0.1" color="#fff"></a-box><!--右側のしろい壁-->
+            
+            <!-- 階段 とりあえず手前部分のみ-->
+            <a-box ID="stair_left" class="collidable" position="8.86 0　-14.45" width="2" height="2.8" depth="0.1" color="#fff"></a-box><!--左側のしろい壁-->
+            <a-box ID="stair_right" class="collidable" position="8.86 0　-18.45" width="2" height="2.8" depth="0.1" color="#fff"></a-box><!--左側のしろい壁-->
+            
+
+            <!-- <a-box class="collidable" position="0 1 1" width="4" height="2.0" depth="0.01" material="opacity: 0.3" color="#ff0"></a-box><!--黄色い壁：半透明　透過率0.3-->
+            <!-- <a-box class="collidable" position="1 0 2" width="2" height="3.5" depth="0.1" material="opacity: 0.5" color="#4CC3D9"></a-box>青い壁：半透明　透過率0.5 --> -->
+            <!--<a-box class="collidable" position="0 0 3" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="0 0 4" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="0 0 5" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="0 0 6" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="0 0 7" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="0 0 8" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="1 0 2" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="1 0 5" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="1 0 6" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="1 0 8" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="2 0 0" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="2 0 2" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="2 0 3" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="2 0 8" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="3 0 0" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="3 0 4" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="3 0 5" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="3 0 7" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="3 0 8" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="4 0 0" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="4 0 1" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="4 0 2" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="4 0 4" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="4 0 5" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="5 0 0" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="5 0 2" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="5 0 5" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="5 0 7" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="5 0 8" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="6 0 0" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="6 0 2" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="6 0 3" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="6 0 5" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="6 0 8" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="7 0 0" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="7 0 7" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="7 0 8" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="8 0 0" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="8 0 1" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="8 0 2" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="8 0 3" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="8 0 4" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="8 0 5" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="8 0 6" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="8 0 7" width="1" height="2" depth="1" color="#4CC3D9"></a-box>
+            <a-box class="collidable" position="8 0 8" width="1" height="2" depth="1" color="#4CC3D9"></a-box>-->
+        </a-entity>
+        <a-plane  rotation="-90 0 0" width="100" height="100" color="#123456" static></a-plane><!--床の設定：X軸で90°回転させて床状態にする-->
+
+        <a-sky color="#abcdef"></a-sky><!--背景色を設定-->
+        <a-entity id="camera" camera look-controls raycaster="objects: .collidable; far: 0.5;" collider-check rotation="0 0 0" position="0 10.7 0"></a-entity><!--カメラ視線による移動と衝突判定-->
+    </a-scene>
+</body>
+</html>
