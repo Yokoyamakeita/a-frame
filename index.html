@@ -28,26 +28,49 @@
             <!-- とりあえず箱(型)を作ってみる -->
             <!-- 見た目基準点　EW1　width＝あつさ　height=高さ　depth=横幅　-->
             <!-- 教室401 -->
-            <a-box ID="EW1" class="collidable" position="0 1.4 -13.95" width="0.1" height="2.8" depth="33" color="#fff"></a-box><!--奥壁-->
-            <a-box ID="SN1" class="collidable" position="4 1.4 2.5" width="7.9" height="2.8" depth="0.1" color="#fff"></a-box><!--左側のしろい壁-->
-            <a-box ID="SN2" class="collidable" position="3 1.4　-2.45" width="5.9" height="2.8" depth="0.1" color="#fff"></a-box><!--右側のしろい壁-->
-            <a-box ID="SN2_1" class="collidable" position="6.2 1.4　-2.45" width="0.5" height="2.8" depth="0.1" color="#adff2f"></a-box><!--右側のしろい壁とドアの間(色都合)-->
-            <a-box ID="SN2_top" class="collidable" position="6.95 2.625　-2.45" width="1" height="0.35" depth="0.1" color="#adff2f"></a-box><!--401のドアの上-->
+            <!-- <a-box ID="EW1" class="collidable" position="0 1.4 -13.95" width="0.1" height="2.8" depth="33" color="#fff"></a-box>奥壁 -->
+
+            <a-box ID="SN1" class="collidable" position="3.925 2.575 2.51" width="6.05" height="0.45" depth="0.1" color="#fff"></a-box><!--左側のしろい壁-->
+            <a-box ID="SN1" class="collidable" position="3.925 1.525 2.51" width="5.85" height="1.65" depth="0.1" color="#fff" material="opacity: 0.3" color="red"></a-box><!--左側のしろい壁-->
+            <a-box ID="SN1" class="collidable" position="3.925 0.35 2.51" width="6.05" height="0.7" depth="0.1" color="#fff"></a-box><!--左側のしろい壁-->
+            <a-box ID="SN1" class="collidable" position="3.925 2.575 2.51" width="6.05" height="0.45" depth="0.1" color="#fff"></a-box><!--左側のしろい壁-->
+            <a-box ID="SN1" class="collidable" position="3.925 1.525 2.51" width="5.85" height="1.65" depth="0.1" color="#fff" material="opacity: 0.3" color="red"></a-box><!--左側のしろい壁-->
+            <a-box ID="SN1" class="collidable" position="3.925 0.35 2.51" width="6.05" height="0.7" depth="0.1" color="#fff"></a-box><!--左側のしろい壁-->
+            <a-box ID="SN2" class="collidable" position="3 1.4 -2.45" width="5.9" height="2.8" depth="0.1" color="#fff"></a-box><!--右側のしろい壁-->
+            <a-box ID="SN2_1" class="collidable" position="6.2 1.4 -2.45" width="0.5" height="2.8" depth="0.1" color="#adff2f"></a-box><!--右側のしろい壁とドアの間(色都合)-->
+            <a-box ID="SN2_top" class="collidable" position="6.95 2.625 -2.45" width="1" height="0.35" depth="0.1" color="#adff2f"></a-box><!--401のドアの上-->
             
             <a-box ID="hasira1" class="collidable" position="0.5 1.4 0" width="1" height="2.8" depth="1" color="#fff"></a-box><!--柱奥-->
             <a-box ID="hasira2" class="collidable" position="7.35 1.4 0" width="1" height="2.8" depth="1" color="#fff"></a-box><!--柱手前-->
             
-            <a-box ID="奥壁奥" class="collidable" position="1 1.4　1" width="0.1" height="2.8" depth="3" color="#fff"></a-box><!--401のドアの上-->
-            <a-box ID="奥壁手前" class="collidable" position="6.85 1.4　1" width="0.1" height="2.8" depth="3" color="#fff"></a-box><!--401のドアの上-->
-
-            <a-box ID="Z3" class="collidable" position="7.65 1.4　-2.45" width="0.5" height="2.8" depth="0.1" color="#adff2f"></a-box><!--ドア部の余白-->
-
-            <a-box ID="EW6" class="collidable" position="7.9 1.4 -5.95" width="0.1" height="2.8" depth="17" color="#fff"></a-box><!--階段左側から401の奥の壁までの壁-->
+            <a-box ID="奥壁奥" class="collidable" position="0.95 2.575 1.5" width="0.1" height="0.45" depth="2" color="#fff"></a-box><!--401のドアの上-->
+            <a-box ID="奥壁奥" class="collidable" position="0.95 1.525 1.5" width="0.1" height="1.65" depth="2" material="opacity: 0.3" color="#fff"></a-box><!--401のドアの上-->
+            <a-box ID="奥壁奥" class="collidable" position="0.95 0.35 1.5" width="0.1" height="0.7" depth="2" color="#fff"></a-box><!--401のドアの上-->
             
+            <a-box ID="奥壁奥" class="collidable" position="0.05 2.575 -1.5" width="0.1" height="0.45" depth="2" color=#fff></a-box><!--401のドアの上-->
+            <a-box ID="奥壁奥" class="collidable" position="0.05 1.525 -1.5" width="0.1" height="1.65" depth="1.5" material="opacity: 0.3" color="#fff"></a-box><!--401のドアの上-->
+            <a-box ID="奥壁奥" class="collidable" position="0.05 1.525 -2.38" width="0.1" height="1.65" depth="0.25"  color="#fff"></a-box><!--401のドアの上-->
+            <a-box ID="奥壁奥" class="collidable" position="0.05 1.525 -0.61" width="0.1" height="1.65" depth="0.25" color=#fff></a-box><!--401のドアの上-->
+            <a-box ID="奥壁奥" class="collidable" position="0.05 0.35 -1.5" width="0.1" height="0.7" depth="2" color="#fff"></a-box><!--401のドアの上-->
+            
+            <a-box ID="奥壁手前" class="collidable" position="6.9 2.575 1.5" width="0.1" height="0.45" depth="2" color="#fff"></a-box><!--401のドアの上-->
+            <a-box ID="奥壁手前" class="collidable" position="6.9 1.525 1.5" width="0.1" height="1.65" depth="2" color="#fff" material="opacity: 0.3" color="red"></a-box><!--401のドアの上-->
+            <a-box ID="奥壁手前" class="collidable" position="6.9 0.35 1.5" width="0.1" height="0.7" depth="2" color="#fff"></a-box><!--401のドアの上-->
+            
+            <a-box ID="Z3" class="collidable" position="7.65 1.4 -2.45" width="0.5" height="2.8" depth="0.1" color="#adff2f"></a-box><!--ドア部の余白-->
+            
+            <a-box ID="EW6" class="collidable" position="7.9 1.4 -5.95" width="0.1" height="2.8" depth="17" color="#fff"></a-box><!--階段左側から401の奥の壁までの壁-->
+            2.1-0.825
             <!-- 教室402　-->
             <a-box ID="EW4_wei" class="collidable" position="6 1.4 -12.45" width="0.1" height="2.8" depth="1" color="#adff2f"></a-box> <!--402と403のドアのつなぎ目-->           
             <a-box ID="EW2" class="collidable" position="6 1.4 -2.7" width="0.1" height="2.8" depth="0.5" color="#adff2f"></a-box> <!--402左ドアの左つなぎ目-->           
             <a-box ID="EW2" class="collidable" position="6 1.4 -4.2" width="0.1" height="2.8" depth="0.5" color="#adff2f"></a-box> <!--402左ドアの右つなぎ目-->    
+            
+            <a-box ID="奥壁奥" class="collidable" position="0.05 2.575 -4.15" width="0.1" height="0.45" depth="3.3" color=#fff></a-box><!--401のドアの上-->
+            <a-box ID="奥壁奥" class="collidable" position="0.05 1.525 -4.15" width="0.1" height="1.65" depth="3.3" material="opacity: 0.3" color="#fff"></a-box><!--401のドアの上-->
+            <a-box ID="奥壁奥" class="collidable" position="0.05 0.35 -4.15" width="0.1" height="0.7" depth="3.3" color="#fff"></a-box><!--401のドアの上-->
+            
+            <a-box ID="hasira3" class="collidable" position="0.5 1.4 -6.3" width="1" height="2.8" depth="1" color="#fff"></a-box><!--柱-->
             
             <a-box ID="EW2" class="collidable" position="6 1.4 -10.7" width="0.1" height="2.8" depth="0.5" color="#adff2f"></a-box> <!--402右ドアの左つなぎ目-->           
             
